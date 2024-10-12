@@ -79,7 +79,9 @@ Excepto por la version custom de Forge, este fue creado por el equipo.
 UpdateStartup - UpdateStartupVariable - SetSelectedDockerImage - GetStartup - ReinstallServer
 * en Resources > Scripts > Components > Server > Versions son necesarios los siguientes archivos
 CustomVersion - VersionInput
-* **Lo siguiente se hace en el archivo VersionsContainer.tsx**
+
+**Lo siguiente se hace en el archivo VersionsContainer.tsx**
+
 * Se importa el Api para getStartup ```import getStartup, { ServerStartup } from '@/api/server/getStartup';```
 * En VersionsContainer con ```const [startupData, setStartupData] = useState<ServerStartup | null>(null);``` se obtienen los datos del servidor, para en caso de ser forge mostrar el contenedor para cambio de version y debajo de este el siguiente codigo para obtener los datos.
 
