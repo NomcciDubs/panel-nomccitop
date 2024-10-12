@@ -64,7 +64,7 @@ Tiene las siguientes funciones junto con la explicacion de su instalacion:
 
 * La configuracion de colores y pagina puede hacerse atravez de LoginContainer.css
 
-* Para cambio de imagen de logo reemplazar <img src={'/assets/svgs/NomcciLogo2SF.svg'} alt="NomcciTop Logo" className="login-image" /> especificamente '/assets/svgs/NomcciLogo2SF.svg' con el SVG de tu logo.
+* Para cambio de imagen de logo reemplazar ```<img src={'/assets/svgs/NomcciLogo2SF.svg'} alt="NomcciTop Logo" className="login-image" />``` especificamente ```'/assets/svgs/NomcciLogo2SF.svg'``` con el SVG de tu logo.
 * La carpeta en donde se encuentra el logo esta en Public > Assets > svgs
 
 ## Manejo de versiones
