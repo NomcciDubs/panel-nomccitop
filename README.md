@@ -13,8 +13,8 @@ This is not a fork.
 This project uses Pterodactyl with some modified components.
 Feel free to use the components for your needs and study the code.
 
-##Instructions for instalation at the end (In spanish)
-##Instrucciones para la instalacion al final
+## Instructions for instalation at the end (In spanish)
+## Instrucciones para la instalacion al final
 
 # Pterodactyl Panel
 
