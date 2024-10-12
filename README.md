@@ -130,7 +130,7 @@ CustomVersion - VersionInput
 ```
 ![Image](https://i.imgur.com/0IoFxXu.png)
 
-* En Resources > Scripts > Routers > routes.ts importar el componente import VersionsContainer from '@/components/server/versions/VersionsContainer';
+* En Resources > Scripts > Routers > routes.ts importar el componente ```import VersionsContainer from '@/components/server/versions/VersionsContainer';```
 * Añadir lo siguiente al final de la lista de Server
 ```
 {
