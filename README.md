@@ -49,9 +49,99 @@ I would like to extend my sincere thanks to the following sponsors for helping f
 | [**Blueprint**](https://blueprint.zip/?pterodactyl=true)     | Create and install Pterodactyl addons and themes with the growing Blueprint framework - the package-manager for Pterodactyl. Use multiple modifications at once without worrying about conflicts and make use of the large extension ecosystem. |
 | [**indifferent broccoli**](https://indifferentbroccoli.com/) | indifferent broccoli is a game server hosting and rental company. With us, you get top-notch computer power for your gaming sessions. We destroy lag, latency, and complexity--letting you focus on the fun stuff.                              |
 
-##Panel NomcciTop
-* [Imagen de Login][(https://i.imgur.com/m6Z9EmY.png)
-](https://i.imgur.com/m6Z9EmY.png)
+## Panel NomcciTop
+
+El panel NomcciTop no es una plantilla ni un proyecto de componentes individuales.
+Tiene las siguientes funciones junto con la explicacion de su instalacion:
+
+## Nuevo Login y Registro.
+
+![Image](https://i.imgur.com/m6Z9EmY.png)
+
+## Instalacion Login y Registro.
+
+* Es necesario el uso de toda la carpeta Resources >  Scripts > Components > Auth
+
+* La configuracion de colores y pagina puede hacerse atravez de LoginContainer.css
+
+* Para cambio de imagen de logo reemplazar <img src={'/assets/svgs/NomcciLogo2SF.svg'} alt="NomcciTop Logo" className="login-image" /> especificamente '/assets/svgs/NomcciLogo2SF.svg' con el SVG de tu logo.
+* La carpeta en donde se encuentra el logo esta en Public > Assets > svgs
+
+## Manejo de versiones
+
+* El manejo de versiones no fue creado por el equipo. Es un addon comprable e instalable, no se daran detalles de su instalacion pero es necesario una instalacion nueva de wings para su uso. Se recomienda encarecidamente comprarlo para el manejo completo del panel, de otra forma, solo instalar los componentes ofrecidos en este repositorio ya que sin el wings ofrecido por el usuario NO FUNCIONARA este panel.
+* Excepto por la version custom de Forge, este fue creado por el equipo.
+* Para la instalacion de forge custom en el apartado versions son necesarios los siguientes archivos de Resources > Scripts > Api
+* UpdateStartup - UpdateStartupVariable - SetSelectedDockerImage - GetStartup - ReinstallServer
+* en Resources > Scripts > Components > Server > Versions son necesarios los siguientes archivos
+* CustomVersion - VersionInput
+* En VersionsContainer con const [startupData, setStartupData] = useState<ServerStartup | null>(null); se obtienen los datos del servidor, para en caso de ser forge mostrar el contenedor para cambio de version.
+* No olvides importar el Api para getStartup import getStartup, { ServerStartup } from '@/api/server/getStartup';
+  useEffect(() => {
+        const fetchStartup = async () => {
+            try {
+                if (serverData?.internalId) { 
+                    const serverUuid = Number(serverData.internalId);
+                    const startup = await getStartup(serverUuid);
+                    console.log('Startup Data:', startup);
+                    console.log('Egg:', startup.egg);
+                    setStartupData(startup);
+                } else {
+                    console.error('No serverData or internalId found.');
+                }
+            } catch (e) {
+                console.error(e);
+            }
+        };
+
+        fetchStartup();
+    }, [uuid]);
+* Para obtener los datos del servidor junto con su egg
+* Considerando que forge es el egg de id 1 se utilizara el siguiente codigo para mostrar el contenedor en el return
+  {
+    startupData?.egg === 1 && 
+        <TitledGreyBox title="Forge Custom - NomcciTop">
+        <CustomVersions />
+        <p css={tw`text-center text-sm text-neutral-400 pt-4 pb-4`}>
+            Utiliza una versión de{' '}
+            <a
+                href="https://files.minecraftforge.net/net/minecraftforge/forge/"
+                target="_blank"
+                rel="noopener noreferrer"
+                css={tw`text-blue-500 hover:underline`}
+            >
+                https://files.minecraftforge.net/net/minecraftforge/forge/
+            </a>{' '}
+            con un formato sin espacios. Ejemplo: "1.20.6-50.1.14"
+        </p>
+    </TitledGreyBox>
+}
+* En Resources > Scripts > Routers > routes.ts importar el componente import VersionsContainer from '@/components/server/versions/VersionsContainer';
+* Añadir lo siguiente al final de la lista de Server
+{
+    path: '/versions',
+    permission: 'versions.*',
+    name: 'Versions',
+    component: VersionsContainer,
+}
+
+## Reinstalacion animada
+
+* Reemplaza tu Resources > Scripts > Components > Elements > ScreenBlock.tsx con el de este repositorio.
+* Reemplaza tu Resources > Scripts > Components > Server > ConflictStateRenderer.tsx con el de este repositorio.
+* En el archivo anterior reemplaza import ServerInstallSvg from '@/assets/images/nomccitop_logo.svg'; con la imagen de tu logo, especificamente reemplaza '@/assets/images/nomccitop_logo.svg'
+* Esta vez el logo se encuentra en  Resources > Scripts > Assets > Images
+
+## Cambio de Egg en Configuracion 
+
+* Son necesarios los siguientes archivos de Resources > Scripts > Api
+* UpdateStartup - UpdateStartupVariable - SetSelectedDockerImage - GetStartup - ReinstallServer
+
+* Es necesario el archivo Resources > Scripts > Components > Server > Settings > EggSelectorBox.tsx
+* Para añadirlo solo pon en tu SettingsContainer.tsx el componente, como por ejemplo conservando el estilo pterodactyl
+<TitledGreyBox title={'Software changing'} css={tw`mb-6 md:mb-10`}>
+    <EggSelectorBox></EggSelectorBox>
+</TitledGreyBox>
 
 ## License
 
