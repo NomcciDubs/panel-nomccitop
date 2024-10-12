@@ -75,8 +75,9 @@ Tiene las siguientes funciones junto con la explicacion de su instalacion:
 * UpdateStartup - UpdateStartupVariable - SetSelectedDockerImage - GetStartup - ReinstallServer
 * en Resources > Scripts > Components > Server > Versions son necesarios los siguientes archivos
 * CustomVersion - VersionInput
-* En VersionsContainer con const [startupData, setStartupData] = useState<ServerStartup | null>(null); se obtienen los datos del servidor, para en caso de ser forge mostrar el contenedor para cambio de version.
-* No olvides importar el Api para getStartup import getStartup, { ServerStartup } from '@/api/server/getStartup';
+* En VersionsContainer con ```const [startupData, setStartupData] = useState<ServerStartup | null>(null);``` se obtienen los datos del servidor, para en caso de ser forge mostrar el contenedor para cambio de version.
+* No olvides importar el Api para getStartup ```import getStartup, { ServerStartup } from '@/api/server/getStartup';```
+```
   useEffect(() => {
         const fetchStartup = async () => {
             try {
@@ -96,8 +97,10 @@ Tiene las siguientes funciones junto con la explicacion de su instalacion:
 
         fetchStartup();
     }, [uuid]);
+```
 * Para obtener los datos del servidor junto con su egg
 * Considerando que forge es el egg de id 1 se utilizara el siguiente codigo para mostrar el contenedor en el return
+```
   {
     startupData?.egg === 1 && 
         <TitledGreyBox title="Forge Custom - NomcciTop">
@@ -116,15 +119,17 @@ Tiene las siguientes funciones junto con la explicacion de su instalacion:
         </p>
     </TitledGreyBox>
 }
+```
 * En Resources > Scripts > Routers > routes.ts importar el componente import VersionsContainer from '@/components/server/versions/VersionsContainer';
 * Añadir lo siguiente al final de la lista de Server
+```
 {
     path: '/versions',
     permission: 'versions.*',
     name: 'Versions',
     component: VersionsContainer,
 }
-
+```
 ## Reinstalacion animada
 
 * Reemplaza tu Resources > Scripts > Components > Elements > ScreenBlock.tsx con el de este repositorio.
@@ -139,10 +144,11 @@ Tiene las siguientes funciones junto con la explicacion de su instalacion:
 
 * Es necesario el archivo Resources > Scripts > Components > Server > Settings > EggSelectorBox.tsx
 * Para añadirlo solo pon en tu SettingsContainer.tsx el componente, como por ejemplo conservando el estilo pterodactyl
+```
 <TitledGreyBox title={'Software changing'} css={tw`mb-6 md:mb-10`}>
     <EggSelectorBox></EggSelectorBox>
 </TitledGreyBox>
-
+```
 ## License
 
 Pterodactyl® Copyright © 2015 - 2022 Dane Everitt and contributors.
