@@ -13,6 +13,9 @@ This is not a fork.
 This project uses Pterodactyl with some modified components.
 Feel free to use the components for your needs and study the code.
 
+##Instructions for instalation at the end (In spanish)
+##Instrucciones para la instalacion al final
+
 # Pterodactyl Panel
 
 Pterodactyl® is a free, open-source game server management panel built with PHP, React, and Go. Designed with security
@@ -46,34 +49,9 @@ I would like to extend my sincere thanks to the following sponsors for helping f
 | [**Blueprint**](https://blueprint.zip/?pterodactyl=true)     | Create and install Pterodactyl addons and themes with the growing Blueprint framework - the package-manager for Pterodactyl. Use multiple modifications at once without worrying about conflicts and make use of the large extension ecosystem. |
 | [**indifferent broccoli**](https://indifferentbroccoli.com/) | indifferent broccoli is a game server hosting and rental company. With us, you get top-notch computer power for your gaming sessions. We destroy lag, latency, and complexity--letting you focus on the fun stuff.                              |
 
-### Supported Games
+##Panel NomcciTop
+*[Imagen de Login](https://imgur.com/a/cYfUB18.png)
 
-Pterodactyl supports a wide variety of games by utilizing Docker containers to isolate each instance. This gives
-you the power to run game servers without bloating machines with a host of additional dependencies.
-
-Some of our core supported games include:
-
-* Minecraft — including Paper, Sponge, Bungeecord, Waterfall, and more
-* Rust
-* Terraria
-* Teamspeak
-* Mumble
-* Team Fortress 2
-* Counter Strike: Global Offensive
-* Garry's Mod
-* ARK: Survival Evolved
-
-In addition to our standard nest of supported games, our community is constantly pushing the limits of this software
-and there are plenty more games available provided by the community. Some of these games include:
-
-* Factorio
-* San Andreas: MP
-* Pocketmine MP
-* Squad
-* Xonotic
-* Starmade
-* Discord ATLBot, and most other Node.js/Python discord bots
-* [and many more...](https://github.com/parkervcp/eggs)
 
 ## License
 
