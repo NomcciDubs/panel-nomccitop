@@ -70,13 +70,15 @@ Tiene las siguientes funciones junto con la explicacion de su instalacion:
 ## Manejo de versiones
 
 * El manejo de versiones no fue creado por el equipo. Es un addon comprable e instalable, no se daran detalles de su instalacion pero es necesario una instalacion nueva de wings para su uso. Se recomienda encarecidamente comprarlo para el manejo completo del panel, de otra forma, solo instalar los componentes ofrecidos en este repositorio ya que sin el wings ofrecido por el usuario NO FUNCIONARA este panel.
-* Excepto por la version custom de Forge, este fue creado por el equipo.
+Excepto por la version custom de Forge, este fue creado por el equipo.
 * Para la instalacion de forge custom en el apartado versions son necesarios los siguientes archivos de Resources > Scripts > Api
-* UpdateStartup - UpdateStartupVariable - SetSelectedDockerImage - GetStartup - ReinstallServer
+UpdateStartup - UpdateStartupVariable - SetSelectedDockerImage - GetStartup - ReinstallServer
 * en Resources > Scripts > Components > Server > Versions son necesarios los siguientes archivos
-* CustomVersion - VersionInput
-* En VersionsContainer con ```const [startupData, setStartupData] = useState<ServerStartup | null>(null);``` se obtienen los datos del servidor, para en caso de ser forge mostrar el contenedor para cambio de version.
-* No olvides importar el Api para getStartup ```import getStartup, { ServerStartup } from '@/api/server/getStartup';```
+CustomVersion - VersionInput
+* **Lo siguiente se hace en el archivo VersionsContainer.tsx**
+* Se importa el Api para getStartup ```import getStartup, { ServerStartup } from '@/api/server/getStartup';```
+* En VersionsContainer con ```const [startupData, setStartupData] = useState<ServerStartup | null>(null);``` se obtienen los datos del servidor, para en caso de ser forge mostrar el contenedor para cambio de version y debajo de este el siguiente codigo para obtener los datos.
+
 ```
   useEffect(() => {
         const fetchStartup = async () => {
@@ -98,7 +100,7 @@ Tiene las siguientes funciones junto con la explicacion de su instalacion:
         fetchStartup();
     }, [uuid]);
 ```
-* Para obtener los datos del servidor junto con su egg
+![Image](https://i.imgur.com/P7LBQv7.png)
 * Considerando que forge es el egg de id 1 se utilizara el siguiente codigo para mostrar el contenedor en el return
 ```
   {
@@ -120,6 +122,8 @@ Tiene las siguientes funciones junto con la explicacion de su instalacion:
     </TitledGreyBox>
 }
 ```
+![Image](https://i.imgur.com/0IoFxXu.png)
+
 * En Resources > Scripts > Routers > routes.ts importar el componente import VersionsContainer from '@/components/server/versions/VersionsContainer';
 * Añadir lo siguiente al final de la lista de Server
 ```
@@ -130,11 +134,13 @@ Tiene las siguientes funciones junto con la explicacion de su instalacion:
     component: VersionsContainer,
 }
 ```
+![Image](https://i.imgur.com/6DpwYJI.png)
+
 ## Reinstalacion animada
 
 * Reemplaza tu Resources > Scripts > Components > Elements > ScreenBlock.tsx con el de este repositorio.
 * Reemplaza tu Resources > Scripts > Components > Server > ConflictStateRenderer.tsx con el de este repositorio.
-* En el archivo anterior reemplaza import ServerInstallSvg from '@/assets/images/nomccitop_logo.svg'; con la imagen de tu logo, especificamente reemplaza '@/assets/images/nomccitop_logo.svg'
+* En el archivo anterior reemplaza ```import ServerInstallSvg from '@/assets/images/nomccitop_logo.svg';``` con la imagen de tu logo, especificamente reemplaza ```'@/assets/images/nomccitop_logo.svg'```
 * Esta vez el logo se encuentra en  Resources > Scripts > Assets > Images
 
 ## Cambio de Egg en Configuracion 
@@ -149,6 +155,9 @@ Tiene las siguientes funciones junto con la explicacion de su instalacion:
     <EggSelectorBox></EggSelectorBox>
 </TitledGreyBox>
 ```
+
+![Image](https://i.imgur.com/6V84Iew.png)
+
 ## License
 
 Pterodactyl® Copyright © 2015 - 2022 Dane Everitt and contributors.
