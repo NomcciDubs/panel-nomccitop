@@ -67,6 +67,10 @@ Tiene las siguientes funciones junto con la explicacion de su instalacion:
 * Para cambio de imagen de logo reemplazar ```<img src={'/assets/svgs/NomcciLogo2SF.svg'} alt="NomcciTop Logo" className="login-image" />``` especificamente ```'/assets/svgs/NomcciLogo2SF.svg'``` con el SVG de tu logo.
 * La carpeta en donde se encuentra el logo esta en Public > Assets > svgs
 
+**Para funcionamiento de registro**
+
+* Sigue las instrucciones del siguiente repositorio https://github.com/orionriker/Pterodactyl-Register
+  
 ## Manejo de versiones
 
 * El manejo de versiones no fue creado por el equipo. Es un addon comprable e instalable, no se daran detalles de su instalacion pero es necesario una instalacion nueva de wings para su uso. Se recomienda encarecidamente comprarlo para el manejo completo del panel, de otra forma, solo instalar los componentes ofrecidos en este repositorio ya que sin el wings ofrecido por el usuario NO FUNCIONARA este panel.
