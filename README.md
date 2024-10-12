@@ -50,7 +50,7 @@ I would like to extend my sincere thanks to the following sponsors for helping f
 | [**indifferent broccoli**](https://indifferentbroccoli.com/) | indifferent broccoli is a game server hosting and rental company. With us, you get top-notch computer power for your gaming sessions. We destroy lag, latency, and complexity--letting you focus on the fun stuff.                              |
 
 ##Panel NomcciTop
-*[Imagen de Login](https://imgur.com/a/cYfUB18.png)
+*[Imagen de Login](https://i.imgur.com/m6Z9EmY.png)
 
 
 ## License
